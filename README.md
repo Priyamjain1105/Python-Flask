@@ -11,7 +11,7 @@
 2. **Static Folder**:  __static/__  ->  _script/script.js_ and _style/style.css_
 
 ### Base Syntax
-```
+```python
    from flask import Flask
    app = flask(__name__)
 
@@ -34,7 +34,7 @@
 ### 3. request
 `import request`  
 
-```
+```python
 @app.route('/submit',method = ['POST','GET'])
 def submit():
     if request.method == 'POST':
