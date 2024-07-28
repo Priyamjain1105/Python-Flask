@@ -1,16 +1,16 @@
 # Python-Flask
 ##  Starting
-- ### Creating Virtual Enviroment
+ - ### Creating Virtual Enviroment
    1. Directory Address should not have the folders which has space in their name
    2. In Terminal:  `pip install venv`
    3. **Create the enviroment** :  `python –m venv c:\desktop…\project_name\venv`
    4. **Activate the enviroment** : ctrl+shift+p  -> python:search interpeture -> select Activate.ps1
       
--  ### Create the Folder Structure
+ -  ### Create the Folder Structure
    1. **Templates Folder**: for storing the html pages
    2. **Static Folder**:  __static/__  ->  _script/script.js_ and _style/style.css_
    
-- ### Base Syntax
+ - ### Base Syntax
    ```python
       from flask import Flask
       app = flask(__name__)               //creating flask class object
