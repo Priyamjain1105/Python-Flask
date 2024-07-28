@@ -148,7 +148,7 @@
    - CHILD TEMPLATE: These template extend the base template and provide content for the defined blocks
 
   BASE TEMPLATE
-   ```
+   ```html
    html<!-- templates/base.html -->
    <!DOCTYPE html>
    <html lang="en">
@@ -186,7 +186,7 @@
   - `{{ url_for('home') }}`: Generates URLs for Flask routes, ensuring links are dynamic.
 
 Child Template
-```
+```html
 <!-- templates/home.html -->
 {% extends 'base.html' %}
 
@@ -198,4 +198,29 @@ Child Template
 {% endblock %}
 
 ```
-   
+
+
+- ## Using Include
+  The {% include %} tag allows you to insert the contents of one template into another
+  ```html
+  <!-- sidebar.html -->
+  <div class="sidebar">
+      <ul>
+          <li><a href="{{ url_for('home') }}">Home</a></li>
+          <li><a href="{{ url_for('about') }}">About</a></li>
+          <li><a href="{{ url_for('contact') }}">Contact</a></li>
+      </ul>
+  </div>
+
+  ``` 
+  ```
+  <!-- extended_template.html -->
+  {% extends 'base.html' %}
+  
+  {% block content %}
+      {% include 'sidebar.html' %}
+      <h2>Main Content Area</h2>
+      <p>This is the main content of the page.</p>
+  {% endblock %}
+
+  ```
