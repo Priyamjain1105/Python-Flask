@@ -1,27 +1,40 @@
 # Python-Flask
 ##  Starting
-### Creating Virtual Enviroment
-1. Directory Address should not have the folders which has space in their name
-2. In Terminal:  `pip install venv`
-3. **Create the enviroment** :  `python –m venv c:\desktop…\project_name\venv`
-4. **Activate the enviroment** : ctrl+shift+p  -> python:search interpeture -> select Activate.ps1
+- ### Creating Virtual Enviroment
+   1. Directory Address should not have the folders which has space in their name
+   2. In Terminal:  `pip install venv`
+   3. **Create the enviroment** :  `python –m venv c:\desktop…\project_name\venv`
+   4. **Activate the enviroment** : ctrl+shift+p  -> python:search interpeture -> select Activate.ps1
+      
+-  ### Create the Folder Structure
+   1. **Templates Folder**: for storing the html pages
+   2. **Static Folder**:  __static/__  ->  _script/script.js_ and _style/style.css_
    
-### Create the Folder Structure
-1. **Templates Folder**: for storing the html pages
-2. **Static Folder**:  __static/__  ->  _script/script.js_ and _style/style.css_
+- ### Base Syntax
+   ```python
+      from flask import Flask
+      app = flask(__name__)               //creating flask class object
+   
+      @app.route('/')                     //using obj function decorator
+      def home():
+          return "Hello World"
+   
+      if __name__ == '__main__':          
+         app.run(debug = True)           //running the flask object
+   ```
 
-### Base Syntax
-```python
-   from flask import Flask
-   app = flask(__name__)               //creating flask class object
+  - ### Linking HTML,CSS and JS Pages
+    Inside index.htnl
+    ```html
+    <head>
+           <link rel ="stylesheet href = "{{url_for('static',filename = 'css.style.css}}" >
+    <head>
 
-   @app.route('/')                     //using obj function decorator
-   def home():
-       return "Hello World"
-
-   if __name__ == '__main__':          
-      app.run(debug = True)           //running the flask object
-```
+    <body>
+    <body>
+    <script type = "text/javascript" src =" {{url_for('static',filename = 'script/script.js')}} "> </script>
+    
+    ```
 
 # Some Modules
 
