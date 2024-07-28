@@ -7,8 +7,8 @@
    4. **Activate the enviroment** : ctrl+shift+p  -> python:search interpeture -> select Activate.ps1
       
  -  ### Create the Folder Structure
-   1. **Templates Folder**: for storing the html pages
-   2. **Static Folder**:  __static/__  ->  _script/script.js_ and _style/style.css_
+     1. **Templates Folder**: for storing the html pages
+     2. **Static Folder**:  __static/__  ->  _script/script.js_ and _style/style.css_
    
  - ### Base Syntax
    ```python
