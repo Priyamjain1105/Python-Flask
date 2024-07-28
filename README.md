@@ -93,4 +93,109 @@
           
       ``` 
 
+# Jinja 2
+  The Variable you want to use should be passed in render template
+ - ## If-else condition
+   ```html
+   {% if result > 50 %}
+      <h1> Your result is passed <h1>
 
+   {% else %}
+      <h1> Yur result is failed <h1>
+
+   {% endif %}   <!--used to close the if-else block-->
+   
+   ```
+ - ## for loop
+   ```html
+   <ul>
+    {% for item in items %}
+        <li>{{ item }}</li>
+    {% endfor %}
+   </ul>
+     ```
+ - ## Macro
+   ```
+   <!-- Defining a Macro -->
+   {% macro render_item(item) %}
+      <li>{{ item }}</li>
+   {% endmacro %}
+
+   <!-- using the macro -->
+   <ul>
+    {% for item in items %}
+        {{ render_item(item) }}
+    {% endfor %}
+   </ul>
+
+
+   ```
+
+    
+ - ## filters
+   ```html
+   <p>{{ "hello world" | title }}</p> <!-- Output: Hello World -->
+   <p>{{ user.username | upper }}</p> <!-- Convert to uppercase -->
+   ```
+
+ - ## Template inheritance
+   Template inheritance in Jinja2 is a powerful feature that allows you to create 
+   reusable and maintainable templates by defining a base template and extending it 
+   with child templates
+
+   - BASE TEMPLATE: The general layout which include common elements
+   - BLOCKS: The placeholders in the base template that child template can overide
+   - CHILD TEMPLATE: These template extend the base template and provide content for the defined blocks
+
+  BASE TEMPLATE
+   ```
+   html<!-- templates/base.html -->
+   <!DOCTYPE html>
+   <html lang="en">
+   <head>
+       <meta charset="UTF-8">
+       <meta name="viewport" content="width=device-width, initial-scale=1.0">
+       <title>{% block title %}My Site{% endblock %}</title>
+       <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+   </head>
+   <body>
+       <header>
+           <h1>My Website</h1>
+           <nav>
+               <ul>
+                   <li><a href="{{ url_for('home') }}">Home</a></li>
+                   <li><a href="{{ url_for('about') }}">About</a></li>
+                   <li><a href="{{ url_for('contact') }}">Contact</a></li>
+               </ul>
+           </nav>
+       </header>
+       <main>
+           {% block content %}
+           <!-- Default content goes here -->
+           {% endblock %}
+       </main>
+       <footer>
+           <p>&copy; 2024 My Website</p>
+       </footer>
+   </body>
+   </html>
+
+   ```
+  - `{% block title %}`: This block allows child templates to set their own title.
+  - `{% block content %}`: This block is where child templates will insert their main content.
+  - `{{ url_for('home') }}`: Generates URLs for Flask routes, ensuring links are dynamic.
+
+Child Template
+```
+<!-- templates/home.html -->
+{% extends 'base.html' %}
+
+{% block title %}Home - My Site{% endblock %}
+
+{% block content %}
+    <h2>Welcome to My Site</h2>
+    <p>This is the home page. Enjoy browsing!</p>
+{% endblock %}
+
+```
+   
