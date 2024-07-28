@@ -202,6 +202,8 @@ Child Template
 
 - ## Using Include
   The {% include %} tag allows you to insert the contents of one template into another
+
+ Base template
   ```html
   <!-- sidebar.html -->
   <div class="sidebar">
@@ -212,8 +214,9 @@ Child Template
       </ul>
   </div>
 
-  ``` 
   ```
+  Child template
+  ```html
   <!-- extended_template.html -->
   {% extends 'base.html' %}
   
