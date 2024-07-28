@@ -13,32 +13,71 @@
 ### Base Syntax
 ```python
    from flask import Flask
-   app = flask(__name__)
+   app = flask(__name__)               //creating flask class object
 
-   @app.route('/')
+   @app.route('/')                     //using obj function decorator
    def home():
        return "Hello World"
 
-   if __name__ == '__main__':
-      app.run(debug = True)
+   if __name__ == '__main__':          
+      app.run(debug = True)           //running the flask object
 ```
 
-## Some Modules
+# Some Modules
 
-### 1. redirect and url_for
-`import redirect, url_for`  
-`return redirect(url_for(pass,score = marks))`
-### 2. render_template
-`import render_template`  
-`return render_template('index.html')`
-### 3. request
-`import request`  
+ - ## 1. redirect and url_for
+      Redirects to other route or function, with parameters
+      ```python
+      import redirect, url_for
+      
+      if user_age> 18:
+              res = "applicable"    
+              
+          else:
+              res = "not_applicable"   
+          return redirect(url_for(res,name = user_name,age = user_age))
+      
+      # When Res = applicable
+      @app.route('/applicable/<name>/<int:age>')
+      def applicable(name,age):
+          return render_template('a.html',name = name,age= age)
+      
+      # When Res != applicable
+      @app.route('/not_applicable/<name>/<int:age>')
+      def not_applicable(name,age):
+          return render_template('na.html',name1 = name,age1 = age)
+      
+      ```
 
-```python
-@app.route('/submit',method = ['POST','GET'])
-def submit():
-    if request.method == 'POST':
-       science = float(request.form['science'])
-``` 
+ - ## 2. render_template
+      To display the html page, and also sending some data using jinja 2
+      ```python
+      import render_template
+      return render_template('index.html',result = res)
+      ```
+      
+      index.html
+      ```html
+      <p>hello your result is {{result}} <p>
+      ```
+
+
+ - ## 3. Handeling form's
+      `import request`  
+      
+      ```python
+      @app.route('/submit',method = ['POST','GET'])
+      def submit():
+          if request.method == 'POST':
+             sciencMarkse = float(request.form['science'])
+   
+          if scienceMarks> 18:
+             res = "applicable"    
+           
+          else:
+              res = "not_applicable"   
+              return redirect(url_for(res,name = user_name,age = user_age))
+          
+      ``` 
 
 
