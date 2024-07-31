@@ -18,5 +18,25 @@
       - click on server: create new file `main.py`
 
 # Theory
-In the app where we have seperate frontend and seperate backend those server communicate thrugh http request
+In the app where we have seperate frontend and seperate backend those server communicate thrugh http requests
+
+## Example
+Example creating backend Route list of users return from that route, and frontend will be used to retrive those users name from the backend route and display them on the frontend.
+
+```py
+from flask import Flask, jsonify
+app = Flask(__name__)
+@app.route("/api/users",methods=['GET'])
+def users():
+    return jsonify {
+           {
+              "users":['priyam', 'zach', 'jessie']
+            }
+        }
+
+if __name__ == "__main__":
+   app.run(debug=True,port=8080)
+    
+```
+`jsonify`: will be used to send the responce of our api route in a json format
 
