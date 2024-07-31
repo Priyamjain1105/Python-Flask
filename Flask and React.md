@@ -16,4 +16,7 @@
    - ### Now we will install necessay dependencies fro backend
       - Install flask: `pip install flask`
       - click on server: create new file `main.py`
-     
+
+# Theory
+In the app where we have seperate frontend and seperate backend those server communicate thrugh http request
+
