@@ -12,7 +12,7 @@
    - ### Creating virtual enviroment
       - To folder server: `cd server`
       - Create env in terminal: `python -m venv myenv`
-      - Active the env: `myenv\Script\activate`
+      - Active the env: `myenv\Scripts\activate`
    - ### Now we will install necessay dependencies fro backend
       - Install flask: `pip install flask`
       - click on server: create new file `main.py`
