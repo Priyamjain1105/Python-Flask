@@ -75,9 +75,14 @@ fetch the backend api
               const [count, setCount] = useState(0);
 
               const fetchAPI = async() => {
-                                        const responce = await axios.get("https://localhost:8080/api/users");
+                    const responce = await axios.get("https://localhost:8080/api/users");
                                        }
-               console.log(responce.data.users);
+                    console.log(responce.data.users);
+
+               useEffect{() => {
+                            fetchAPI();
+                   }, []);
      ```
      - Resonce varialble is used to store data
      - users array
+     - useEffect is grabbing the users object and print the result
