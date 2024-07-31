@@ -58,14 +58,14 @@ now we will begin setting up our frontend and configure it so that it can fetch 
                              SERVER CONFICURATION IS COMPLETED
 
 # WORKING IN FRONT-END
-Inside App Jsx file
-STEP 1: open new terminal
-STEP 2: move to client directory `cd ../client`
-STEP 3: `npm install axios`, using to fetch api request to our server
-STEP 4: `npm run dev`
-STEP 5: in parallel terminal start backend server in terminal :`main.py`
+Inside App Jsx file  
+STEP 1: open new terminal  
+STEP 2: move to client directory `cd ../client`  
+STEP 3: `npm install axios`, using to fetch api request to our server  
+STEP 4: `npm run dev`  
+STEP 5: in parallel terminal start backend server in terminal :`main.py`  
 
-fetch the backend api
+fetch the backend api  
 
    - ## INSIDE App.jsx
      ```jsx
