@@ -86,3 +86,8 @@ fetch the backend api
      - Resonce varialble is used to store data
      - users array
      - useEffect is grabbing the users object and print the result
+    
+   - ## Displaying the output
+     ```jsx
+     
+     ```
