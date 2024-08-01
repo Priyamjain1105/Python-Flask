@@ -76,7 +76,13 @@
 
 
  - ## 3. Handeling form's
-      `import request`  
+      `import request`
+      ```html
+       <form action="submit" method="post">
+       <p>Enter Your Science Marks</p>
+       <input type="number" name = "science" id="science">
+       </form>
+      ```
       
       ```python
       @app.route('/submit',method = ['POST','GET'])
