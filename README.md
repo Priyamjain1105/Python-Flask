@@ -13,7 +13,7 @@
  - ### Base Syntax
    ```python
       from flask import Flask
-      app = flask(__name__)               //creating flask class object
+      app = Flask(__name__)               //creating flask class object
    
       @app.route('/')                     //using obj function decorator
       def home():
